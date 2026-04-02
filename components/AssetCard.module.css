@@ -1,0 +1,82 @@
+.card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 240px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  background: var(--color-bg-card-hover);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assetInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.symbol {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.chartContainer {
+  flex: 1;
+  width: 100%;
+  min-height: 60px;
+  position: relative;
+}
+
+.loading {
+  color: var(--color-text-muted);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
