@@ -2,24 +2,27 @@
 
 :root {
   /* User requested palette */
-  --color-bg-main: #243740;
-  --color-accent-red: #f24b4b;
-  --color-accent-green: #c1ff72;
+  --color-bg-main: #0D1215;
+  --color-accent-red: #ff3b3b;
+  --color-accent-green: #aaff40;
 
   /* Additional harmonious UI tokens for the dashboard */
-  --color-bg-card: rgba(36, 55, 64, 0.8); /* transluscent base */
-  --color-bg-card-hover: rgba(45, 68, 79, 0.9);
+  --color-bg-card: rgba(20, 30, 36, 0.4); /* transluscent base */
+  --color-bg-card-hover: rgba(30, 45, 54, 0.6);
   
+  --color-bg-card-selected: rgba(45, 65, 80, 0.4);
+  --color-border-selected: rgba(255, 255, 255, 0.2);
+
   --color-text-primary: #ffffff;
-  --color-text-muted: #a0aab2; /* Derived from #243740 */
+  --color-text-muted: #8d98a0;
 
   /* Asset specific colors */
-  --color-aapl: #A2AAAD; /* Apple Silver */
+  --color-aapl: #D6D6D6; /* Bright Apple Silver */
   --color-amzn: #FF9900; /* Amazon Orange */
   --color-nvda: #76B900; /* Nvidia Green */
-  --color-tsla: #E31937; /* Tesla Red */
+  --color-tsla: #FF2540; /* Tesla bright Red */
   --color-btc: #F7931A;  /* Bitcoin Gold */
-  --color-sp500: #0076CE; /* Default blue for SP500, though we will prioritize the user palette for trends */
+  --color-sp500: #1DA1F2; /* SP500 Blue */
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -35,7 +38,7 @@ body {
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
   /* Apply a slight radial gradient to make the desktop screen look more premium, centered down */
-  background: radial-gradient(circle at 50% -20%, #2d4450 0%, #243740 50%, #1a282f 100%);
+  background: radial-gradient(circle at 50% -20%, #172329 0%, #0D1215 50%, #070a0b 100%);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

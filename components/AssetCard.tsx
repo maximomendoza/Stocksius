@@ -10,11 +10,13 @@ interface AssetCardProps {
   name: string;
   timeframe: string;
   colorTheme: string;
+  isSelected?: boolean;
+  onClick?: () => void;
 }
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function AssetCard({ symbol, name, timeframe, colorTheme }: AssetCardProps) {
+export default function AssetCard({ symbol, name, timeframe, colorTheme, isSelected, onClick }: AssetCardProps) {
   // Pass timeframe and symbol to our API proxy
   // Use SWR to auto-refresh every 60s when on '1D'
   const isIntraday = timeframe === '1D';
@@ -37,7 +39,11 @@ export default function AssetCard({ symbol, name, timeframe, colorTheme }: Asset
   const pctSign = isPositive ? '+' : '';
 
   return (
-    <div className={`glass-panel ${styles.card}`}>
+    <div 
+      className={`glass-panel ${styles.card} ${isSelected ? styles.selected : ''}`} 
+      onClick={onClick}
+      style={isSelected ? { borderColor: colorTheme, boxShadow: `0 8px 32px ${colorTheme}33` } : {}}
+    >
       <div className={styles.header}>
         <div className={styles.assetInfo}>
           <div className={styles.iconCircle} style={{ borderColor: colorTheme }}>

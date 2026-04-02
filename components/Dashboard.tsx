@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import AssetCard from './AssetCard';
 import BenchmarkRow from './BenchmarkRow';
+import MainChart from './MainChart';
+import AIChat from './AIChat';
 import styles from './Dashboard.module.css';
 
 const ASSETS = [
@@ -15,6 +17,9 @@ const ASSETS = [
 
 export default function Dashboard() {
   const [timeframe, setTimeframe] = useState('1D');
+  const [selectedSymbol, setSelectedSymbol] = useState(ASSETS[0].symbol);
+
+  const selectedAsset = ASSETS.find(a => a.symbol === selectedSymbol) || ASSETS[0];
 
   return (
     <div className={styles.container}>
@@ -46,8 +51,26 @@ export default function Dashboard() {
             name={asset.name}
             timeframe={timeframe}
             colorTheme={asset.colorTheme}
+            isSelected={asset.symbol === selectedAsset.symbol}
+            onClick={() => setSelectedSymbol(asset.symbol)}
           />
         ))}
+      </div>
+
+      <div className={styles.bottomSection}>
+        <div className={styles.chartArea}>
+          <MainChart 
+            symbol={selectedAsset.symbol} 
+            name={selectedAsset.name} 
+            timeframe={timeframe} 
+            colorTheme={selectedAsset.colorTheme} 
+          />
+        </div>
+        <div className={styles.chatArea}>
+          <AIChat 
+            context={`User is currently looking at ${selectedAsset.name} (${selectedAsset.symbol}). Timeframe is ${timeframe}. Overall watchlist includes AAPL, AMZN, NVDA, TSLA, BTC-USD.`} 
+          />
+        </div>
       </div>
     </div>
   );

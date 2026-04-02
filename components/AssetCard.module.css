@@ -13,6 +13,15 @@
   background: var(--color-bg-card-hover);
 }
 
+.selected {
+  transform: translateY(-4px);
+  background: var(--color-bg-card-selected);
+  cursor: default;
+}
+.card:not(.selected) {
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   justify-content: space-between;

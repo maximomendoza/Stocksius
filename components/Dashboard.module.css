@@ -74,3 +74,25 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
+
+.bottomSection {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.chartArea {
+  flex: 2;
+  min-width: 0;
+}
+
+.chatArea {
+  flex: 1;
+  min-width: 320px;
+}
+
+@media (max-width: 900px) {
+  .bottomSection {
+    flex-direction: column;
+  }
+}

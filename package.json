@@ -9,8 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.50",
+    "@ai-sdk/react": "^3.0.144",
     "@vercel/analytics": "^2.0.1",
+    "ai": "^3.4.1",
     "lucide-react": "^1.7.0",
+    "markdown-to-jsx": "^9.7.13",
     "next": "16.2.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
