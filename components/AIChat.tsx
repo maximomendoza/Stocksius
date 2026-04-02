@@ -20,6 +20,9 @@ export default function AIChat({ context }: AIChatProps) {
     ],
     body: {
       context
+    },
+    onError: (error) => {
+      alert("Chat Error: " + error.message);
     }
   });
 
